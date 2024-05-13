@@ -21,7 +21,13 @@ const client = new Client({
 // Connect to the PostgreSQL database
 client.connect()
   .then(() => console.log('Connected to PostgreSQL database'))
-  .catch(err => console.error('Error connecting to PostgreSQL database', err));
+    .catch(err => console.error('Error connecting to PostgreSQL database', err));
+  
+// Test API
+
+app.get('/ping', (req,res) => {
+    res.json("pong !!!");
+})
 
 // Retrieve all records from the table
 app.get('/api/records', async (req, res) => {
