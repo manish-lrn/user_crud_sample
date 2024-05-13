@@ -11,7 +11,10 @@ app.use(bodyParser.json());
   
 // Test API
 
-app.get('/ping', (req,res) => {
+app.get('/ping', (req, res) => {
+    console.log("==req.body", req.body);
+    console.log("==req.params", req.params);
+
     res.json(userController.ping());
 })
 
