@@ -11,10 +11,7 @@ app.use(bodyParser.json());
   
 // Test API
 
-app.get('/ping', (req, res) => {
-    console.log("==req.body", req.body);
-    console.log("==req.params", req.params);
-
+app.get('/apiTest', (req, res) => {
     res.json(userController.ping());
 })
 
@@ -69,3 +66,5 @@ app.delete('/api/records/:id', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports = app;
